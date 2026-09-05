@@ -199,7 +199,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_Sprite: {fileID: 2193077994593488821, guid: 31dee4327ac4e2146a13fd895eb4cb4b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -383,7 +383,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_Sprite: {fileID: 2193077994593488821, guid: 31dee4327ac4e2146a13fd895eb4cb4b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -475,7 +475,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_Sprite: {fileID: -2391669244243282240, guid: 3a43bafc4a0aec84abeb8941fd6d85b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -496,6 +496,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 110479358}
+  - component: {fileID: 110479359}
   m_Layer: 0
   m_Name: Reel3
   m_TagString: Untagged
@@ -516,9 +517,24 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 880627798}
   - {fileID: 1421546263}
   m_Father: {fileID: 1953137409}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &110479359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110479357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b5cd8041a15289488be73f8c4d4a97a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ReelController
+  Symbols: {fileID: 1421546263}
+  spinSpeed: 8
 --- !u!1 &134667712
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,6 +729,8 @@ GameObject:
   m_Component:
   - component: {fileID: 195242309}
   - component: {fileID: 195242310}
+  - component: {fileID: 195242311}
+  - component: {fileID: 195242312}
   m_Layer: 0
   m_Name: playBtn
   m_TagString: Untagged
@@ -795,6 +813,65 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &195242311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195242308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728e38e7b676f104da741e3e6ae39cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayButton
+  popupController: {fileID: 1044257196}
+--- !u!61 &195242312
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195242308}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.21, y: 2.25}
+    newSize: {x: 2.21, y: 2.25}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.21, y: 2.25}
+  m_EdgeRadius: 0
 --- !u!1 &281627369
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,7 +952,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_Sprite: {fileID: -5620835742497143143, guid: 2bce4f3a2366ec746a0f4d7a2b21915a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -967,7 +1044,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_Sprite: {fileID: -4945717182177459964, guid: 3ef964ccaea114346aaef6824ab9e433, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1004,12 +1081,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 449439735}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0292, y: -0.4084, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.029199958, y: -0.4084, z: 0}
   m_LocalScale: {x: 1.0583, y: 1.9723741, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1304597882}
+  m_Father: {fileID: 663802631}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!331 &449439737
 SpriteMask:
@@ -1192,6 +1269,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 449439736}
   - {fileID: 1304597882}
   m_Father: {fileID: 1953137409}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1208,7 +1286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
   Symbols: {fileID: 1304597882}
-  spinSpeed: 5
+  spinSpeed: 8
 --- !u!1 &683552042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,12 +1312,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683552042}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.0292, y: -0.3792, z: 0}
   m_LocalScale: {x: 1.0583, y: 1.9527967, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2040327722}
+  m_Father: {fileID: 1571389255}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!331 &683552044
 SpriteMask:
@@ -1380,7 +1458,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_Sprite: {fileID: -2391669244243282240, guid: 3a43bafc4a0aec84abeb8941fd6d85b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1417,12 +1495,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880627797}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0291, y: -0.3403, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.029099941, y: -0.3403, z: 0}
   m_LocalScale: {x: 1.0583411, y: 1.9527708, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1421546263}
+  m_Father: {fileID: 110479358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!331 &880627799
 SpriteMask:
@@ -1585,6 +1663,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1044257195}
   - component: {fileID: 1044257194}
+  - component: {fileID: 1044257196}
   m_Layer: 0
   m_Name: popup_0
   m_TagString: Untagged
@@ -1639,7 +1718,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_MaskInteraction: 0
   m_Sprite: {fileID: -6351617318852302439, guid: b53d6ae5dadfa93409d8688e2db9dce3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1669,6 +1748,23 @@ Transform:
   - {fileID: 12795109}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1044257196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044257193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ca8d8bb99c03b440841af22e09766d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PopupController
+  popup: {fileID: 1044257193}
+  reels:
+  - {fileID: 663802632}
+  - {fileID: 1571389256}
+  - {fileID: 110479359}
 --- !u!1 &1216864428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1794,7 +1890,6 @@ Transform:
   - {fileID: 281627370}
   - {fileID: 10302750}
   - {fileID: 2128760349}
-  - {fileID: 449439736}
   m_Father: {fileID: 663802631}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1342213478
@@ -1877,7 +1972,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_Sprite: {fileID: -4945717182177459964, guid: 3ef964ccaea114346aaef6824ab9e433, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1922,7 +2017,6 @@ Transform:
   - {fileID: 1602109291}
   - {fileID: 15356639}
   - {fileID: 406429973}
-  - {fileID: 880627798}
   m_Father: {fileID: 110479358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1554978771
@@ -2005,7 +2099,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_Sprite: {fileID: 2193077994593488821, guid: 31dee4327ac4e2146a13fd895eb4cb4b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2026,6 +2120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1571389255}
+  - component: {fileID: 1571389256}
   m_Layer: 0
   m_Name: Reel2
   m_TagString: Untagged
@@ -2046,9 +2141,24 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 683552043}
   - {fileID: 2040327722}
   m_Father: {fileID: 1953137409}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1571389256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571389254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b5cd8041a15289488be73f8c4d4a97a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ReelController
+  Symbols: {fileID: 2040327722}
+  spinSpeed: 8
 --- !u!1 &1602109290
 GameObject:
   m_ObjectHideFlags: 0
@@ -2129,7 +2239,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_Sprite: {fileID: -5620835742497143143, guid: 2bce4f3a2366ec746a0f4d7a2b21915a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2313,7 +2423,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_Sprite: {fileID: -2391669244243282240, guid: 3a43bafc4a0aec84abeb8941fd6d85b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2503,7 +2613,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_Sprite: {fileID: -5620835742497143143, guid: 2bce4f3a2366ec746a0f4d7a2b21915a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2640,7 +2750,6 @@ Transform:
   - {fileID: 1957534101}
   - {fileID: 1554978772}
   - {fileID: 1342213479}
-  - {fileID: 683552043}
   m_Father: {fileID: 1571389255}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2128760348
@@ -2723,7 +2832,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_Sprite: {fileID: -4945717182177459964, guid: 3ef964ccaea114346aaef6824ab9e433, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

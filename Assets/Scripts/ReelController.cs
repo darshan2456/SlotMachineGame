@@ -17,7 +17,6 @@ public class ReelController : MonoBehaviour
             symbolObjects[i] = Symbols.GetChild(i);
         }
 
-        startSpin();
     }
 
     public void startSpin()
