@@ -1,5 +1,3 @@
-Absolutely. Since this is a **small Unity project you actually built yourself**, I'd make the README look like a proper GitHub project rather than a generic college-assignment README.
-
 # 🎰 SlotMachineGame
 
 > A simple pixel-art slot machine built in **Unity and C#**, featuring randomized reels, animated lever mechanics, deterministic reel stopping based on randomly generated targets, and win/loss detection.
@@ -13,6 +11,11 @@ The machine consists of three independently controlled reels. When the player st
 The project deliberately keeps the architecture modular: **random number generation, reel behavior, lever animation, UI interaction, and game orchestration are handled by separate components.**
 
 ---
+
+## Demonstration 🕹️
+
+<img width="1920" height="1020" alt="Screen Recording 2026-09-06 235406" src="https://github.com/user-attachments/assets/a3e6ce11-ff44-46aa-95d8-e5a43217790f" />
+
 
 ## 🧠 How It Works
 
@@ -179,19 +182,14 @@ This project was primarily built to understand practical Unity development and C
 
 Key concepts explored:
 
-* Unity's **GameObject + Component** model
-* C# object references through Unity's Inspector
-* `MonoBehaviour`
-* `Update()`
-* Coroutines and `IEnumerator`
-* `WaitForSeconds`
-* `WaitUntil`
+* Unity Game Development — Building a complete interactive game using Unity.
+* C# Scripting — Structuring game logic using C# classes and methods. Object-Oriented Design — Separating responsibilities across controllers such as GameController, ReelController, and LeverController.
 * Sprite manipulation
 * Transform movement
 * Component-to-component communication
 * Random number generation
 * Basic game-state management
-* Separation of responsibilities between controllers
+* Separation of concerns (responsibilities) between controllers
 
 ---
 
@@ -200,12 +198,5 @@ Key concepts explored:
 
 **Darshan**
 
-Built as a hands-on Unity/C# project while learning game development and object-oriented software architecture.
+Built as a hands-on Unity/C# project while learning game development and object-oriented programming.
 
----
-
-## ⭐ Final Note
-
-This project started as a simple **"make a slot machine"** exercise and evolved into a nice little example of separating **game orchestration from individual component behavior**.
-
-Small project, but a surprisingly good sandbox for learning how game systems actually fit together.
