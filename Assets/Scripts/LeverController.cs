@@ -10,4 +10,10 @@ public class LeverController : MonoBehaviour
         defaultLever.SetActive(false);
         pulledLever.SetActive(true);
     }
+
+    public void ResetLever()
+    {
+        pulledLever.SetActive(false);
+        defaultLever.SetActive(true);
+    }
 }

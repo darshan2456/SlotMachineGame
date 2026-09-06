@@ -4,7 +4,10 @@ public class ReelController : MonoBehaviour
 {
     [SerializeField] private Transform Symbols;
     [SerializeField] private float spinSpeed = 8f;
+    private int targetSymbol;
     private bool isSpinning = false;
+
+    private float stopPosition = 0f;
 
     private Transform[] symbolObjects;
 
@@ -19,8 +22,9 @@ public class ReelController : MonoBehaviour
 
     }
 
-    public void startSpin()
+    public void startSpin(int target)
     {
+        targetSymbol = target;
         isSpinning = true;
     }
 
@@ -44,6 +48,8 @@ public class ReelController : MonoBehaviour
 
     private void MoveSymbols()
     {
+        float previousTargetY = symbolObjects[targetSymbol].localPosition.y;
+
         foreach (Transform symbol in symbolObjects)
         {
             symbol.localPosition +=
@@ -55,6 +61,17 @@ public class ReelController : MonoBehaviour
                 pos.y += 4f;
                 symbol.localPosition = pos;
             }
+        }
+
+        float currentTargetY = symbolObjects[targetSymbol].localPosition.y;
+
+        if(previousTargetY>stopPosition && currentTargetY <= stopPosition)
+        {
+            Vector3 pos = symbolObjects[targetSymbol].localPosition;
+            pos.y = stopPosition;
+            symbolObjects[targetSymbol].localPosition = pos;
+
+            stopSpin();
         }
     }
 }

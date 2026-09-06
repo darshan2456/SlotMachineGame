@@ -1,21 +1,19 @@
+using NUnit.Framework.Interfaces;
+using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem.Android.LowLevel;
 
 public class PopupController : MonoBehaviour
 {
-    [SerializeField] private GameObject popup;
-    [SerializeField] private LeverController leverController;
-    [SerializeField] private ReelController[] reels;
+
+    [SerializeField] private GameController gameController;
 
 
     public void Play()
     {
         gameObject.SetActive(false);
 
-        leverController.Invoke(nameof(LeverController.PullLever), 1f);
-
-        foreach (ReelController reel in reels)
-        {
-            reel.Invoke(nameof(ReelController.startSpin), 1f);
-        }
+        gameController.StartGame();
     }
 }
