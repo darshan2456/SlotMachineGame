@@ -5,7 +5,7 @@ public class ReelController : MonoBehaviour
     [SerializeField] private Transform Symbols;
     [SerializeField] private float spinSpeed = 8f;
     private int targetSymbol;
-    private bool isSpinning = false;
+    private bool Spinning = false;
 
     private float stopPosition = 0f;
 
@@ -25,17 +25,22 @@ public class ReelController : MonoBehaviour
     public void startSpin(int target)
     {
         targetSymbol = target;
-        isSpinning = true;
+        Spinning = true;
     }
 
     public void stopSpin()
     {
-        isSpinning = false;
+        Spinning = false;
+    }
+
+    public bool isSpinning()
+    {
+        return Spinning;
     }
 
     private void Update()
     {
-        if (!isSpinning)
+        if (!Spinning)
         {
             return;
         }
